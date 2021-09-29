@@ -6,21 +6,19 @@ using System.Threading.Tasks;
 
 namespace geometric_shapes
 {
-    class Rect
+    class Rect : Quad
     {
-        public int Side1 { get; set; }
-        public int Side2 { get; set; }
+        public new void Print()
+        {
+            Console.WriteLine($"Perimeter is {Perimeter()}; Area: {Area()}");
 
+        }
         public int Area()
         {
             return Side1 * Side2;
         }
-
-        
-        public int Perimeter()
+        public Rect(int SideA, int SideB) : base(SideA, SideB, SideA, SideB)
         {
-            return 2 * (Side1 + Side2);
         }
-           
     }
 }
